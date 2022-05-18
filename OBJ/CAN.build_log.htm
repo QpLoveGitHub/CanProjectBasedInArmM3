@@ -1,0 +1,63 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 1, 1, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.33.0.0
+Toolchain Path:  C:\mdk\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DARMSTM.DLL V1.68.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
+Dialog DLL:      TARMSTM.DLL V1.66.0.0
+ 
+<h2>Project:</h2>
+E:\WORK\05 can\WORK\LocalRespository\实验26 CAN收发实验\USER\CAN.uvprojx
+Project File Date:  05/18/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\mdk\ARM\ARMCC\Bin'
+Build target 'CAN'
+compiling main.c...
+main.c(23): warning:  #177-D: variable "key"  was declared but never referenced
+  		u8 key;
+main.c(24): warning:  #177-D: variable "i"  was declared but never referenced
+  	u8 i=0,t=0;
+main.c(24): warning:  #177-D: variable "t"  was declared but never referenced
+  	u8 i=0,t=0;
+main.c(25): warning:  #177-D: variable "cnt"  was declared but never referenced
+  	u8 cnt=0;
+main.c(27): warning:  #550-D: variable "res"  was set but never used
+  	u8 res;
+main.c(28): warning:  #177-D: variable "mode"  was declared but never referenced
+  	u8 mode=CAN_Mode_LoopBack;//CAN工作模式;CAN_Mode_Normal(0)：普通模式，CAN_Mode_LoopBack(1)：环回模式
+main.c: 6 warnings, 0 errors
+linking...
+Program Size: Code=7792 RO-data=336 RW-data=52 ZI-data=1836  
+FromELF: creating hex file...
+"..\OBJ\CAN.axf" - 0 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.1.0.5.pack
+                Keil.STM32F1xx_DFP.1.0.5
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator.SKY-20201203EBA\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
