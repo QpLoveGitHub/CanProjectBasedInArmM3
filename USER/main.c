@@ -23,7 +23,8 @@
 		u8 key;
 	u8 i=0,t=0;
 	u8 cnt=0;
-	u8 canbuf[8] = {1,2,3,4,5,6,7,8};
+	u8 canbuf[8] = {0x1,0x2,0x3,0x4,0x5,0x6,0x7,0x8};
+	u8 canbut_T[8] = {0x11,0x22,0x33,0x44,0x55,0x66,0x77,0x88};
 	u8 res;
 	u8 mode=CAN_Mode_LoopBack;//CAN工作模式;CAN_Mode_Normal(0)：普通模式，CAN_Mode_LoopBack(1)：环回模式
 
@@ -52,10 +53,26 @@
  	while(1)
 	{
 		delay_ms(500);
-		res=Can_Send_Msg(canbuf,8);
-		LED0 = !LED0;
+		res=Can_Send_Msg(canbut_T,8);
+		
+		if(canbuf[2] >= 0x35)
+		{
+			LED0 = !LED0;
+		}
+		
+		mode = 0;
+		CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,mode);
+		if(Can_Receive_Msg(canbuf) == 0)
+		{
+			for(i = 0;i < 8;i++)
+			{
+				printf("%4x",canbuf[i]);
+			}
+			printf("\r\n");
+		}
+		
 		printf("DEBUG:Can_Send_Msg\r\n");
-#if 0
+#if 1
 		key=KEY_Scan(0);
 		if(key==KEY0_PRES)//KEY0按下,发送一次数据
 		{
